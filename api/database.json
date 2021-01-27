@@ -1,0 +1,53 @@
+{
+    "admins": [
+        {
+            "id": 1,
+            "name": "H",
+            "email": "h@h.com"
+        }
+    ] , 
+
+    "houses": [
+        {
+            "id": 1,
+            "name": "G1",
+            "adminId": 1
+        } , 
+        {
+            "id": 2,
+            "name": "G2",
+            "adminId": 1
+        }
+    ] , 
+
+    "rooms": [
+        {
+            "id": 1,
+            "houseId": 1,
+            "name": "A",
+            "beds": 2
+        } , 
+        {
+            "id": 2,
+            "houseId": 1,
+            "name": "B",
+            "beds": 2
+        }
+    ] , 
+
+    "residents": [
+        {
+            "id": 1,
+            "firstName": "Slothy",
+            "lastName": "Realslow",
+            "birthdate": "10/30/1993",
+            "gender": "female",
+            "houseId": 1,
+            "roomId": 2,
+            "intake_date": "10/30/1995",
+            "applied_date": "10/30/1994",
+            "discharge_date": "10/30/1996",
+            "notes": "la la la"
+        }
+    ]
+}
