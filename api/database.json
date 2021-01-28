@@ -53,6 +53,19 @@
             "applied_date": "10/30/1994",
             "discharge_date": "10/30/1996",
             "notes": "la la la"
+        } , 
+        {
+            "id": 2,
+            "firstName": "Slothy2",
+            "lastName": "Realslow",
+            "birthdate": "10/30/1993",
+            "gender": "female",
+            "houseId": 1,
+            "roomId": 2,
+            "intake_date": "10/30/1995",
+            "applied_date": "10/30/1994",
+            "discharge_date": "10/30/1996",
+            "notes": "la la la"
         }
     ]
 }
