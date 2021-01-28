@@ -17,6 +17,11 @@
             "id": 2,
             "name": "G2",
             "adminId": 1
+        } , 
+        {
+            "id": 3,
+            "name": "G3",
+            "adminId": 1
         }
     ] , 
 
