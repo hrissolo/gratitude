@@ -13,25 +13,25 @@ export const ResidentProvider = (props) => {
             .then(setResidents)
     }
 
-    // const getReptileById = (id) => {
-    //     return fetch(`http://localhost:8088/reptiles/${id}`)
-    //         .then(res => res.json())
-    // }
-
-    const editResident = resident => {
-        return fetch(`http://localhost:8088/residents/${resident.id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(resident)
-        })
-            .then(getResidents)
+    const getResidentById = (id) => {
+        return fetch(`http://localhost:8088/residents/${id}`)
+            .then(res => res.json())
     }
+
+    // const editResident = resident => {
+    //     return fetch(`http://localhost:8088/residents/${resident.id}`, {
+    //         method: "PUT",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify(resident)
+    //     })
+    //         .then(getResidents)
+    // }
     
     return (
         <ResidentContext.Provider value={{
-            residents, getResidents, editResident
+            residents, getResidents, getResidentById
         }}>
             {props.children}
         </ResidentContext.Provider>

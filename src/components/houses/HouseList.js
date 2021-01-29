@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { HouseContext} from "./HouseProvider"
 import { HouseCard } from "./HouseCard"
 import {useHistory} from "react-router-dom"
+import { Item } from 'semantic-ui-react'
 
 
 export const HouseList = () => {
@@ -16,20 +17,18 @@ export const HouseList = () => {
 
     return (
       
-
     <>
     <div className="houseListcontainer">
       <h1 className="houseTitle">G Houses</h1>
           
-      <div className="container">
-      
-        {
-        houses.map(houses => {
-          return <HouseCard key={houses.id} houses={houses} />
-          })
-        }
-      </div>
-      </div>
+        <Item.Group divided>
+            {
+                houses.map(houses => {
+                return <HouseCard key={houses.id} houses={houses} />
+                })
+            }
+        </Item.Group>
+    </div>  
     </>
   )
 }
