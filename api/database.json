@@ -57,11 +57,11 @@
         {
             "id": 2,
             "firstName": "Slothy2",
-            "lastName": "Realslow",
+            "lastName": "Realslow2",
             "birthdate": "10/30/1993",
             "gender": "female",
             "houseId": 1,
-            "roomId": 2,
+            "roomId": 1,
             "intake_date": "10/30/1995",
             "applied_date": "10/30/1994",
             "discharge_date": "10/30/1996",
