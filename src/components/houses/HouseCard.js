@@ -8,10 +8,12 @@ export const HouseCard = ( {houses} ) => {
     return (
 
         <Item>
-            <Item.Image size='tiny' src='https://react.semantic-ui.com/images/wireframe/image.png' />
-                <Item.Content verticalAlign='middle'><h3 className="houses_Card">
-                    { houses.name } </h3> is this working?
-                </Item.Content>
+            <Link to="/">
+                <Item.Image size='tiny' src='https://react.semantic-ui.com/images/wireframe/image.png' />
+                    <Item.Content verticalAlign='middle'><h3 className="houses_Card">
+                        { houses.name } </h3> is this working?
+                    </Item.Content>
+            </Link>
         </Item>    
     )
 }

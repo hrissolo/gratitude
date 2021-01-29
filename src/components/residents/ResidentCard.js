@@ -9,9 +9,9 @@ export const ResidentCard = ( {residents} ) => {
 
     return (
 
-        
+
         <Table.Row>
-            <Table.Cell>{residents.lastName}</Table.Cell>
+            <Table.Cell><Link to={`/residents/${residents.id}`}>{residents.lastName}</Link></Table.Cell>
             <Table.Cell>{residents.houseId}</Table.Cell>
             <Table.Cell>{residents.roomId}</Table.Cell>
             <Table.Cell> daysSinceIntake()</Table.Cell>
