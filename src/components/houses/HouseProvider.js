@@ -13,25 +13,16 @@ export const HouseProvider = (props) => {
             .then(setHouses)
     }
 
-    // const getReptileById = (id) => {
-    //     return fetch(`http://localhost:8088/reptiles/${id}`)
-    //         .then(res => res.json())
-    // }
+    const getHouseById = (id) => {
+        return fetch(`http://localhost:8088/houses/${id}`)
+            .then(res => res.json())
+    }
 
-    // const editReptile = reptile => {
-    //     return fetch(`http://localhost:8088/reptiles/${reptile.id}`, {
-    //         method: "PUT",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(reptile)
-    //     })
-    //         .then(getReptiles)
-    // }
+
     
     return (
         <HouseContext.Provider value={{
-            houses, getHouses
+            houses, getHouses, getHouseById
         }}>
             {props.children}
         </HouseContext.Provider>

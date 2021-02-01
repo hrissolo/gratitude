@@ -15,9 +15,19 @@ export const ResidentList = () => {
 		
     }, [])
 
+    const justCurrentResidents = ((rezzy) => 
+      {
+        if (rezzy.discharge_date === null) {
+        return ( 
+        <ResidentCard key={rezzy.id} residents={rezzy} /> )
+        } else {
+          return null
+        }
+      })
+
+
     return (
       
-
     <>
     <div className="residentListcontainer">
       <h1 className="residentTitle">Residents</h1>
@@ -36,9 +46,11 @@ export const ResidentList = () => {
 
         <Table.Body>
 
+        
         {
         residents.map(residents => {
-          return <ResidentCard key={residents.id} residents={residents} />
+          
+          return justCurrentResidents(residents)
           })
         }
 

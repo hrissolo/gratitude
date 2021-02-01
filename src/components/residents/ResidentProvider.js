@@ -8,6 +8,7 @@ export const ResidentProvider = (props) => {
 
 
     const getResidents = () => {
+        
         return fetch("http://localhost:8088/residents")
             .then(res => res.json())
             .then(setResidents)
