@@ -4,6 +4,7 @@ import { HouseList } from "./components/houses/HouseList";
 import { HouseProvider } from "./components/houses/HouseProvider";
 import { ResidentProvider } from "./components/residents/ResidentProvider"
 import { ResidentList } from "./components/residents/ResidentList"
+import { AlumniList } from "./components/alumni/AlumniList"
 
 //import all of the providers + lists here// 
 
@@ -20,6 +21,12 @@ export const ApplicationViews = props => {
       <ResidentProvider>
         <Route exact path="/residents">
           <ResidentList/>
+        </Route>
+      </ResidentProvider>
+
+      <ResidentProvider>
+        <Route exact path="/alumni">
+          <AlumniList/>
         </Route>
       </ResidentProvider>
 
