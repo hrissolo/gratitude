@@ -40,10 +40,10 @@
   "residents": [
     {
       "id": 1,
-      "firstName": "Slothy",
+      "firstName": "Can U hear me",
       "lastName": "Realslow",
       "birthdate": "10/30/1993",
-      "gender": "female",
+      "gender": "male",
       "houseId": 1,
       "roomId": 2,
       "intake_date": "10/30/1995",

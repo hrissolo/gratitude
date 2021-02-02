@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { ResidentContext } from "./ResidentProvider"
 import { useParams, useHistory, Link } from "react-router-dom"
-
+import {Button} from "semantic-ui-react"
 
 
 export const ResidentDetail = () => {
@@ -19,6 +19,22 @@ export const ResidentDetail = () => {
 		})
 			}, [residentId])
             
+
+    const editButton = (() => {
+                return (
+                        <>
+                            <Button color="olive" onClick={() => {
+                               
+                                    history.push(`/residents/edit/:residentId(\d+)`)
+                            
+            
+                            }}>edit 
+                            </Button>
+                        </>
+                    )
+            })
+
+
     return (
         <section className="resident_detail">
             
@@ -30,7 +46,7 @@ export const ResidentDetail = () => {
             
             <div className="resident__notes"><b>Notes:</b><br/> {resident.notes}</div>
             <br/>
-        
+        {editButton()}
         </section>
     )
 }
