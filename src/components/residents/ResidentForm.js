@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react'
 
 export const ResidentForm = (props) => {
-    const {addResident, getResidents, getResidentById, editResident } = useContext(ResidentContext)
+    const { addResident, getResidents, getResidentById, editResident } = useContext(ResidentContext)
 
 
     //for edit, hold on to state of task in this view
@@ -57,9 +57,13 @@ export const ResidentForm = (props) => {
                     gender: residents.gender,
                     houseId: residents.houseId,
                     roomId: residents.roomId,
+                    intake_date: residents.intake_date,
+                    applied_date: residents.applied_date,
+                    discharge_date: residents.discharge_date,
                     notes: residents.notes
+                    
                 })
-                .then(() => history.push(`/residents/edit/${residents.id}`))
+                .then(() => history.push(`/residents/${residents.id}`))
             }else {
                 //POST - add
                 addResident({
@@ -70,6 +74,9 @@ export const ResidentForm = (props) => {
                     gender: residents.gender,
                     houseId: residents.houseId,
                     roomId: residents.roomId,
+                    intake_date: residents.intake_date,
+                    applied_date: residents.applied_date,
+                    discharge_date: residents.discharge_date,
                     notes: residents.notes
                 })
                 .then(() => history.push("/residents"))
@@ -102,7 +109,7 @@ export const ResidentForm = (props) => {
             <Form.Field >
                 <div className="form-group">
                     <label htmlFor="bday">Birth Date: </label>
-                    <input type="text"  name="bday" value={residents.birthdate} className="form-control"
+                    <input type="text"  name="birthdate" value={residents.birthdate} className="form-control"
                     onChange={handleControlledInputChange}
                     ></input>
                 </div>

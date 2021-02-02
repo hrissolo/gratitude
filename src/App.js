@@ -38,7 +38,6 @@ export const ApplicationViews = props => {
         </Route>
       </ResidentProvider>
 
-
       <ResidentProvider>
         <Route exact path="/residents/edit/:residentId(\d+)">
           <ResidentForm />

@@ -25,7 +25,7 @@ export const ResidentDetail = () => {
                         <>
                             <Button color="olive" onClick={() => {
                                
-                                    history.push(`/residents/edit/:residentId(\d+)`)
+                                    history.push(`/residents/edit/${resident.id}`)
                             
             
                             }}>edit 

@@ -40,16 +40,16 @@
   "residents": [
     {
       "id": 1,
-      "firstName": "Can U hear me",
-      "lastName": "Realslow",
-      "birthdate": "10/30/1993",
-      "gender": "male",
+      "firstName": "yooDOO",
+      "lastName": "Hello",
+      "birthdate": "20/20/1088",
+      "gender": "female",
       "houseId": 1,
       "roomId": 2,
       "intake_date": "10/30/1995",
       "applied_date": "10/30/1994",
       "discharge_date": null,
-      "notes": "la la la"
+      "notes": "WOO"
     },
     {
       "id": 2,
