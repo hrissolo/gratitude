@@ -1,23 +1,17 @@
 import React, { useContext } from "react"
 import { Link } from "react-router-dom"
-import { ResidentContext } from "./ResidentProvider"
 import { Table } from 'semantic-ui-react'
-import moment from 'moment';
 
+export const AlumniCard = ( {residents} ) => {
 
-export const ResidentCard = ( {residents} ) => {
-
-    
-    
 
     return (
 
 
         <Table.Row>
             <Table.Cell><Link to={`/residents/${residents.id}`}>{residents.lastName}</Link></Table.Cell>
-            <Table.Cell>{residents.houseId}</Table.Cell>
-            <Table.Cell>{residents.roomId}</Table.Cell>
-            <Table.Cell> daysSinceIntake()</Table.Cell>
+            <Table.Cell>{residents.discharge_date}</Table.Cell>
+            <Table.Cell>{residents.notes}</Table.Cell>
         </Table.Row>
                
         
