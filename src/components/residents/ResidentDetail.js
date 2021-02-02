@@ -1,33 +1,52 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { ResidentContext } from "./ResidentProvider"
 import { useParams, useHistory, Link } from "react-router-dom"
-
+import {Button} from "semantic-ui-react"
 
 
 export const ResidentDetail = () => {
     const { getResidentById } = useContext(ResidentContext)
 	
-	const [resident, setresidents] = useState({})
+	const [resident, setResidents] = useState({})
 	
 	const {residentId} = useParams();
 	const history = useHistory();
 
     useEffect(() => {
         getResidentById(residentId)
-        // .then((response) => {
-		// 	setResidents(response)
-		// })
+        .then((response) => {
+			setResidents(response)
+		})
 			}, [residentId])
             
+
+    const editButton = (() => {
+                return (
+                        <>
+                            <Button color="olive" onClick={() => {
+                               
+                                    history.push(`/residents/edit/${resident.id}`)
+                            
+            
+                            }}>Edit Resident
+                            </Button>
+                        </>
+                    )
+            })
+
+
     return (
         <section className="resident_detail">
             
-            <h3 className="resident__name">{resident.username}</h3>
-            <div className="resident__species"><b>Species:</b><br/>{resident.species}</div>
-            <div className="resident__lookingFor"><b>Looking for:</b><br/> {resident.lookingFor}</div>
-            <div className="resident__bio"><b>Bio:</b><br/> {resident.bio}</div>
+            <h3 className="resident__name">{resident.firstName} {resident.lastName}</h3>
+            <div className="resident__bday"><br/>{resident.birthdate}</div>
+            <div className="resident__gender"><br/>{resident.gender}</div>
+            <div className="resident__house"><b>House:</b><br/> {resident.houseId}</div>
+            <div className="resident__room"><b>Room:</b><br/>{resident.roomId}</div>
+            
+            <div className="resident__notes"><b>Notes:</b><br/> {resident.notes}</div>
             <br/>
-        
+        {editButton()}
         </section>
     )
 }
