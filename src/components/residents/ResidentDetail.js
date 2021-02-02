@@ -28,7 +28,7 @@ export const ResidentDetail = () => {
                                     history.push(`/residents/edit/${resident.id}`)
                             
             
-                            }}>edit 
+                            }}>Edit Resident
                             </Button>
                         </>
                     )
