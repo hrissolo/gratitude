@@ -9,43 +9,42 @@ export const ApplicantForm = () => {
 
     const history = useHistory();
 
-    const [residents, setResident] = useState({
-      firstName: "", 
-      lastName: "", 
-      birthdate: "", 
-      gender: "",
-      houseId:null, 
-      roomId:null, 
-      notes:null,
-      payment_method:"",
-      current_location:"",
-      desired_intake_date:""
-    });
+    const [residents, setResident] = useState({});
 
-    const firstName = useRef(null)
-    const lastName = useRef(null)
-    const birthdate = useRef(null)
-    const gender = useRef(null)
-    const houseId = useRef(null)
-    const roomId = useRef(null)
-    const notes = useRef(null)
-    const payment_method = useRef(null)
-    const current_location = useRef(null)
-    const desired_intake_date = useRef(null)
+    // const firstName = useRef(null)
+    // const lastName = useRef(null)
+    // const birthdate = useRef(null)
+    // const gender = useRef(null)
+    // const houseId = useRef(null)
+    // const roomId = useRef(null)
+    // const notes = useRef(null)
+    // const intake_date= useRef(null)
+    // const applied_date = useRef(null)
+    // const discharge_date = useRef(null)
+    // const payment_method = useRef(null)
+    // const current_location = useRef(null)
+    // const desired_intake_date = useRef(null)
+
 
 
     useEffect(() => {
       getResidents()
     }, [])
 
-    const handleControlledInputChange = (event) => {
+    const handleInputChange = (event) => {
       const newResident = { ...residents }
       newResident[event.target.id] = event.target.value
       setResident(newResident)
     }
 
-    const handleSaveResident = (event) => {
-      event.preventDefault() 
+
+    const handleAddResident = (event) => {
+      // event.preventDefault() 
+        const newResident = { ...residents }
+        
+        newResident.applied_date = Date.now()
+        newResident.roomId = null
+        newResident.houseId = null
 
         addResident(resident)
         .then(() => history.push("/applicants"))
@@ -53,7 +52,7 @@ export const ApplicantForm = () => {
     
 
     return (
-      <Form className="form--login" onSubmit={handleSaveResident}>
+      <Form className="form--login" onSubmit={handleInputChange}>
              <div className="register-form-align">
              <h1 className="form-register-txt">
                Apply to Gratitude Houses 
@@ -144,7 +143,7 @@ export const ApplicantForm = () => {
                 required
               /></Form.Field>
             
-              <Button color="olive" type="submit" onClick={handleSaveResident}>Submit Application </Button>
+              <Button color="olive" type="submit" onClick={handleAddResident}>Submit Application </Button>
               </div>
           </Form>
       
