@@ -7,6 +7,8 @@ import { ResidentList } from "./components/residents/ResidentList"
 import { AlumniList } from "./components/alumni/AlumniList"
 import { ResidentDetail } from "./components/residents/ResidentDetail"
 import { ResidentForm } from "./components/residents/ResidentForm"
+import { ApplicantTabs } from "./components/application/ApplicantTabs"
+import { ApplicantForm } from "./components/application/ApplicantForm";
 
 //import all of the providers + lists here// 
 
@@ -41,6 +43,12 @@ export const ApplicationViews = props => {
       <ResidentProvider>
         <Route exact path="/residents/edit/:residentId(\d+)">
           <ResidentForm />
+        </Route>
+      </ResidentProvider>
+
+      <ResidentProvider>
+        <Route exact path="/application">
+          <ApplicantForm/>
         </Route>
       </ResidentProvider>
 

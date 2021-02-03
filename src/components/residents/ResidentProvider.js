@@ -6,6 +6,16 @@ export const ResidentContext = createContext()
 export const ResidentProvider = (props) => {
     const [residents, setResidents] = useState([])
 
+    const addResident = applicant => {
+        return fetch("http://localhost:8088/residents", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(applicant)
+        })
+        .then(response => response.json())
+    }
 
     const getResidents = () => {
         return fetch("http://localhost:8088/residents")
@@ -31,7 +41,7 @@ export const ResidentProvider = (props) => {
     
     return (
         <ResidentContext.Provider value={{
-            residents, getResidents, getResidentById, editResident
+            residents, getResidents, getResidentById, editResident, addResident
         }}>
             {props.children}
         </ResidentContext.Provider>
