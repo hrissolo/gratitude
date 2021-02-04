@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react"
-import { ResidentContext} from "./ResidentProvider"
-import { ResidentCard } from "./ResidentCard"
+import { ResidentContext} from "../residents/ResidentProvider"
+import { ApplicantCard } from "./ApplicantCard"
 import {useHistory} from "react-router-dom"
 import { Table } from 'semantic-ui-react'
 
 
-export const ResidentList = () => {
+export const ApplicantList = () => {
     const { residents, getResidents } = useContext(ResidentContext)
     const history = useHistory()
     
@@ -15,12 +15,13 @@ export const ResidentList = () => {
 		
     }, [])
 
-    const justCurrentResidents = ((rezzy) => 
+    const allApplicants = ((rezzy) => 
       {
-        if (rezzy.discharge_date === null && rezzy.intake_date !== null ) {
+        if (rezzy.discharge_date === null && rezzy.intake_date === null) {
         return ( 
-        <ResidentCard key={rezzy.id} residents={rezzy} /> )
-        } else {
+        <ApplicantCard key={rezzy.id} residents={rezzy} /> ) } 
+    
+        else {
           return null
         }
       })
@@ -29,18 +30,18 @@ export const ResidentList = () => {
     return (
       
     <>
-    <div className="residentListcontainer">
-      <h1 className="residentTitle">Residents</h1>
+    <div className="applicantListcontainer">
+      <h1 className="applicantTitle">Applicants</h1>
           
-      <div className="residentContainer">
+      <div className="applicantContainer">
       
       <Table striped>
         <Table.Header>
         <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>House</Table.HeaderCell>
-            <Table.HeaderCell>Room</Table.HeaderCell>
-            <Table.HeaderCell>Days since intake</Table.HeaderCell>
+            <Table.HeaderCell>Applied Date</Table.HeaderCell>
+            <Table.HeaderCell>Current Location</Table.HeaderCell>
+            <Table.HeaderCell>Payment Method</Table.HeaderCell>
         </Table.Row>
             </Table.Header>
 
@@ -50,7 +51,7 @@ export const ResidentList = () => {
         {
         residents.map(residents => {
           
-          return justCurrentResidents(residents)
+          return allApplicants(residents)
           })
         }
 

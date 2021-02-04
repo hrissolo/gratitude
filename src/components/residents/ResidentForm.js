@@ -3,6 +3,8 @@ import { ResidentContext } from "./ResidentProvider"
 import { useHistory, useParams } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react'
 
+//Edit current resident information
+
 export const ResidentForm = (props) => {
     const { addResident, getResidents, getResidentById, editResident } = useContext(ResidentContext)
 
