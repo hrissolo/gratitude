@@ -31,7 +31,7 @@ export const DeniedList = () => {
       
     <>
     <div className="deniedListcontainer">
-      <h1 className="deniedTitle">Denied Applicant</h1>
+      <h1 className="deniedTitle">Denied Applicants</h1>
           
       <div className="deniedContainer">
       
