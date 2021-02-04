@@ -6,10 +6,12 @@ import { ApplicationViews } from "./App.js";
 import { NavBar } from "./components/navbar/NavBar"
 
 
+
 export const GratitudeHouses = () => (
 
    <>
         <NavBar />
+
             <ApplicationViews />
     </>
 

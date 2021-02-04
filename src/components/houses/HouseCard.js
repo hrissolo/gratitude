@@ -9,9 +9,9 @@ export const HouseCard = ( {houses} ) => {
 
         <Item>
             <Link to="/">
-                <Item.Image size='tiny' src='https://react.semantic-ui.com/images/wireframe/image.png' />
+                <Item.Image size='tiny' src={houses.photo}/>
                     <Item.Content verticalAlign='middle'><h3 className="houses_Card">
-                        { houses.name } </h3> is this working?
+                        { houses.name } </h3> 3/3 rooms filled 
                     </Item.Content>
             </Link>
         </Item>    

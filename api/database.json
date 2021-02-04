@@ -9,18 +9,33 @@
   "houses": [
     {
       "id": 1,
-      "name": "G1",
-      "adminId": 1
+      "name": "OG",
+      "adminId": 1,
+      "photo": "house-imgs/OG.png"
     },
     {
       "id": 2,
       "name": "G2",
-      "adminId": 1
+      "adminId": 1,
+      "photo": "house-imgs/G2.jpg"
     },
     {
       "id": 3,
       "name": "G3",
-      "adminId": 1
+      "adminId": 1,
+      "photo": "house-imgs/G3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "G4",
+      "adminId": 1,
+      "photo": "house-imgs/G4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "GBH",
+      "adminId": 1,
+      "photo": "house-imgs/GBH.jpg"
     }
   ],
   "rooms": [
@@ -40,7 +55,7 @@
   "residents": [
     {
       "id": 1,
-      "firstName": "yooDOO",
+      "firstName": "yooDOooodle",
       "lastName": "Hello",
       "birthdate": "20/20/1088",
       "gender": "female",
@@ -49,7 +64,10 @@
       "intake_date": "10/30/1995",
       "applied_date": "10/30/1994",
       "discharge_date": null,
-      "notes": "WOOtttt"
+      "notes": "WOOtttt",
+      "payment_method": "idk",
+      "current_location": "rehab",
+      "desired_intake_date": "august"
     },
     {
       "id": 2,
@@ -62,7 +80,10 @@
       "intake_date": "10/30/1995",
       "applied_date": "10/30/1994",
       "discharge_date": "10/30/1998",
-      "notes": "la la laloooooo"
+      "notes": "la la laloooooo",
+      "payment_method": "idk",
+      "current_location": "rehab",
+      "desired_intake_date": "september"
     }
   ]
 }
