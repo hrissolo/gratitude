@@ -52,6 +52,11 @@ export const ApplicationViews = props => {
         </Route>
       </ResidentProvider>
 
+      <ResidentProvider>
+        <Route exact path="/applicants">
+          <ApplicantTabs/>
+        </Route>
+      </ResidentProvider>
     </>
   )
 }

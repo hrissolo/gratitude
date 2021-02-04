@@ -84,6 +84,22 @@
       "payment_method": "idk",
       "current_location": "rehab",
       "desired_intake_date": "september"
+    },
+    {
+      "firstName": "Richie",
+      "lastName": "Holsenback",
+      "birthdate": "6/1/92",
+      "gender": "Male",
+      "houseId": null,
+      "roomId": null,
+      "intake_date": null,
+      "applied_date": 1612468742394,
+      "discharge_date": null,
+      "notes": null,
+      "payment_method": "Grant",
+      "current_location": "Nashville",
+      "desired_intake_date": "Now",
+      "id": 3
     }
   ]
 }

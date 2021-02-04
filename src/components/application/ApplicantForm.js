@@ -84,7 +84,7 @@ export const ApplicantForm = () => {
           <Form.Field>
       
           <div className="registerLabel">Birth Date</div>
-      <input
+            <input
                 
                 id="birthdate"
                 width={16}

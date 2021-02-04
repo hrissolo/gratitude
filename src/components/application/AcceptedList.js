@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react"
-import { ResidentContext} from "./ResidentProvider"
-import { ResidentCard } from "./ResidentCard"
+import { ResidentContext} from "../residents/ResidentProvider"
+import { AcceptedCard } from "./AcceptedCard"
 import {useHistory} from "react-router-dom"
 import { Table } from 'semantic-ui-react'
 
 
-export const ResidentList = () => {
+export const AcceptedList = () => {
     const { residents, getResidents } = useContext(ResidentContext)
     const history = useHistory()
     
@@ -15,12 +15,13 @@ export const ResidentList = () => {
 		
     }, [])
 
-    const justCurrentResidents = ((rezzy) => 
+    const acceptedApplicants = ((rezzy) => 
       {
-        if (rezzy.discharge_date === null && rezzy.intake_date !== null ) {
+        if (rezzy.discharge_date === null && rezzy.intake_date === null) {
         return ( 
-        <ResidentCard key={rezzy.id} residents={rezzy} /> )
-        } else {
+        <AcceptedCard key={rezzy.id} residents={rezzy} /> ) } 
+    
+        else {
           return null
         }
       })
@@ -29,18 +30,17 @@ export const ResidentList = () => {
     return (
       
     <>
-    <div className="residentListcontainer">
-      <h1 className="residentTitle">Residents</h1>
+    <div className="acceptedListcontainer">
+      <h1 className="acceptedTitle">Accepted Applicants</h1>
           
-      <div className="residentContainer">
+      <div className="acceptedContainer">
       
       <Table striped>
         <Table.Header>
         <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>House</Table.HeaderCell>
-            <Table.HeaderCell>Room</Table.HeaderCell>
-            <Table.HeaderCell>Days since intake</Table.HeaderCell>
+            <Table.HeaderCell>Applied Date</Table.HeaderCell>
+            <Table.HeaderCell>Desired Intake Date</Table.HeaderCell>
         </Table.Row>
             </Table.Header>
 
@@ -50,7 +50,7 @@ export const ResidentList = () => {
         {
         residents.map(residents => {
           
-          return justCurrentResidents(residents)
+          return acceptedApplicants(residents)
           })
         }
 

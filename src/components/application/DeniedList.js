@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react"
-import { ResidentContext} from "./ResidentProvider"
-import { ResidentCard } from "./ResidentCard"
+import { ResidentContext} from "../residents/ResidentProvider"
+import { DeniedCard } from "./DeniedCard"
 import {useHistory} from "react-router-dom"
 import { Table } from 'semantic-ui-react'
 
 
-export const ResidentList = () => {
+export const DeniedList = () => {
     const { residents, getResidents } = useContext(ResidentContext)
     const history = useHistory()
     
@@ -15,12 +15,13 @@ export const ResidentList = () => {
 		
     }, [])
 
-    const justCurrentResidents = ((rezzy) => 
+    const deniedApplicants = ((rezzy) => 
       {
-        if (rezzy.discharge_date === null && rezzy.intake_date !== null ) {
+        if (rezzy.discharge_date === null && rezzy.intake_date === null) {
         return ( 
-        <ResidentCard key={rezzy.id} residents={rezzy} /> )
-        } else {
+        <DeniedCard key={rezzy.id} residents={rezzy} /> ) } 
+    
+        else {
           return null
         }
       })
@@ -29,18 +30,17 @@ export const ResidentList = () => {
     return (
       
     <>
-    <div className="residentListcontainer">
-      <h1 className="residentTitle">Residents</h1>
+    <div className="deniedListcontainer">
+      <h1 className="deniedTitle">Denied Applicants</h1>
           
-      <div className="residentContainer">
+      <div className="deniedContainer">
       
       <Table striped>
         <Table.Header>
         <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>House</Table.HeaderCell>
-            <Table.HeaderCell>Room</Table.HeaderCell>
-            <Table.HeaderCell>Days since intake</Table.HeaderCell>
+            <Table.HeaderCell>Applied Date</Table.HeaderCell>
+            <Table.HeaderCell>Notes</Table.HeaderCell>
         </Table.Row>
             </Table.Header>
 
@@ -50,7 +50,7 @@ export const ResidentList = () => {
         {
         residents.map(residents => {
           
-          return justCurrentResidents(residents)
+          return deniedApplicants(residents)
           })
         }
 
