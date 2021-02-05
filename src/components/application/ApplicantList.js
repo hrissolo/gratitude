@@ -17,7 +17,7 @@ export const ApplicantList = () => {
 
     const allApplicants = ((rezzy) => 
       {
-        if (rezzy.discharge_date === null && rezzy.intake_date === null) {
+        if (rezzy.applied_date > 1234 && rezzy.accepted_date <1235) {
         return ( 
         <ApplicantCard key={rezzy.id} residents={rezzy} /> ) } 
     
@@ -31,7 +31,7 @@ export const ApplicantList = () => {
       
     <>
     <div className="applicantListcontainer">
-      <h1 className="applicantTitle">Applicants</h1>
+      <h1 className="applicantTitle">Pending Applicants</h1>
           
       <div className="applicantContainer">
       

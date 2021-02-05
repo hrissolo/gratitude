@@ -18,7 +18,7 @@ export const AlumniList = () => {
 
     const justCurrentAlumni = ((alumni) => 
       {
-        if (alumni.discharge_date !== null) {
+        if (alumni.discharge_date > 1234 && alumni.intake_date > 1234) {
         return ( 
         <AlumniCard key={alumni.id} residents={alumni} /> )
         } else {

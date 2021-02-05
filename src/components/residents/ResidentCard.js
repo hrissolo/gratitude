@@ -13,7 +13,7 @@ export const ResidentCard = ( {residents} ) => {
 
 
         <Table.Row>
-            <Table.Cell><Link to={`/residents/${residents.id}`}>{residents.lastName}</Link></Table.Cell>
+            <Table.Cell><Link to={`/residents/${residents.id}`}>{residents.firstName} {residents.lastName}</Link></Table.Cell>
             <Table.Cell>{residents.houseId}</Table.Cell>
             <Table.Cell>{residents.roomId}</Table.Cell>
             <Table.Cell> daysSinceIntake()</Table.Cell>

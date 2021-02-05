@@ -39,7 +39,7 @@ export const ResidentDetail = () => {
         <section className="resident_detail">
             
             <h3 className="resident__name">{resident.firstName} {resident.lastName}</h3>
-            <div className="resident__bday"><br/>{resident.birthdate}</div>
+            <div className="resident__bday"><br/>Birthdate: {resident.birthdate}</div>
             <div className="resident__gender"><br/>{resident.gender}</div>
             <div className="resident__house"><b>House:</b><br/> {resident.houseId}</div>
             <div className="resident__room"><b>Room:</b><br/>{resident.roomId}</div>

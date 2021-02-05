@@ -17,7 +17,7 @@ export const DeniedList = () => {
 
     const deniedApplicants = ((rezzy) => 
       {
-        if (rezzy.discharge_date === null && rezzy.intake_date === null) {
+        if (rezzy.accepted_date <1234 && rezzy.intake_date > 1234) {
         return ( 
         <DeniedCard key={rezzy.id} residents={rezzy} /> ) } 
     

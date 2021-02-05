@@ -17,7 +17,7 @@ export const AcceptedList = () => {
 
     const acceptedApplicants = ((rezzy) => 
       {
-        if (rezzy.discharge_date === null && rezzy.intake_date === null) {
+        if (rezzy.accepted_date > 1234 && rezzy.intake_date < 1235) {
         return ( 
         <AcceptedCard key={rezzy.id} residents={rezzy} /> ) } 
     

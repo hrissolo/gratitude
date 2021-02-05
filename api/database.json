@@ -11,7 +11,7 @@
       "id": 1,
       "name": "OG",
       "adminId": 1,
-      "photo": "house-imgs/OG.png"
+      "photo": "public/house-imgs/OG.png"
     },
     {
       "id": 2,
@@ -23,19 +23,19 @@
       "id": 3,
       "name": "G3",
       "adminId": 1,
-      "photo": "house-imgs/G3.jpg"
+      "photo": "public/house-imgs/G3.jpg"
     },
     {
       "id": 4,
       "name": "G4",
       "adminId": 1,
-      "photo": "house-imgs/G4.jpg"
+      "photo": "public/house-imgs/G4.jpg"
     },
     {
       "id": 5,
       "name": "GBH",
       "adminId": 1,
-      "photo": "house-imgs/GBH.jpg"
+      "photo": "public/house-imgs/GBH.jpg"
     }
   ],
   "rooms": [
@@ -55,15 +55,16 @@
   "residents": [
     {
       "id": 1,
-      "firstName": "yooDOooodle",
-      "lastName": "Hello",
+      "firstName": "current resident.",
+      "lastName": "current resident.",
       "birthdate": "20/20/1088",
       "gender": "female",
       "houseId": 1,
       "roomId": 2,
-      "intake_date": "10/30/1995",
-      "applied_date": "10/30/1994",
-      "discharge_date": null,
+      "intake_date": 1612468742399,
+      "applied_date": 1612468742384,
+      "accepted_date": 1612468742394,
+      "discharge_date": 1234,
       "notes": "WOOtttt",
       "payment_method": "idk",
       "current_location": "rehab",
@@ -71,35 +72,65 @@
     },
     {
       "id": 2,
-      "firstName": "Slothy2",
-      "lastName": "Realslow2",
+      "firstName": "Slothy",
+      "lastName": "discharged. should be alumni",
       "birthdate": "10/30/1993",
       "gender": "female",
       "houseId": 1,
       "roomId": 1,
-      "intake_date": "10/30/1995",
-      "applied_date": "10/30/1994",
-      "discharge_date": "10/30/1998",
-      "notes": "la la laloooooo",
-      "payment_method": "idk",
-      "current_location": "rehab",
-      "desired_intake_date": "september"
+      "intake_date": 1612468742399,
+      "applied_date": 1612468742394,
+      "accepted_date": 1612468742394,
+      "discharge_date": 1712468742394,
+      "notes": "la la laloooooo"
     },
     {
-      "firstName": "Richie",
-      "lastName": "Holsenback",
-      "birthdate": "6/1/92",
-      "gender": "Male",
-      "houseId": null,
-      "roomId": null,
-      "intake_date": null,
+      "id": 3,
+      "firstName": "3 - yes alumni/ discharged",
+      "lastName": "3 - yes alumni/ discharged",
+      "birthdate": "10/30/1993",
+      "gender": "female",
+      "houseId": 1,
+      "roomId": 1,
+      "intake_date": 1612468742399,
       "applied_date": 1612468742394,
-      "discharge_date": null,
-      "notes": null,
-      "payment_method": "Grant",
-      "current_location": "Nashville",
-      "desired_intake_date": "Now",
-      "id": 3
+      "accepted_date": 1612468742394,
+      "discharge_date": 1712468742394,
+      "notes": "la la laloooooo"
+    },
+    {
+      "firstName": "Applied & accepted. not rez. ",
+      "lastName": "Applied & accepted. not rez. ",
+      "birthdate": "437827492",
+      "gender": "F",
+      "houseId": 1234,
+      "roomId": 1234,
+      "intake_date": 1234,
+      "applied_date": 1612556084713,
+      "accepted_date": 1612556084714,
+      "discharge_date": 1234,
+      "notes": "",
+      "payment_method": "F",
+      "current_location": "F",
+      "desired_intake_date": "F",
+      "id": 4
+    },
+    {
+      "firstName": "applying & denying",
+      "lastName": "applying & denying",
+      "birthdate": "432890",
+      "gender": "hjk",
+      "houseId": 1234,
+      "roomId": 1234,
+      "intake_date": 1234,
+      "applied_date": 1612557361629,
+      "accepted_date": 1234,
+      "discharge_date": 1234,
+      "notes": "",
+      "payment_method": "hjk",
+      "current_location": "hjk",
+      "desired_intake_date": "hj",
+      "id": 5
     }
   ]
 }

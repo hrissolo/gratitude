@@ -17,7 +17,7 @@ export const ResidentList = () => {
 
     const justCurrentResidents = ((rezzy) => 
       {
-        if (rezzy.discharge_date === null && rezzy.intake_date !== null ) {
+        if (rezzy.intake_date > 1234 && rezzy.applied_date > 1234 && rezzy.discharge_date < 1235) {
         return ( 
         <ResidentCard key={rezzy.id} residents={rezzy} /> )
         } else {
