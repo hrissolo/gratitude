@@ -6,7 +6,7 @@ import { Table } from 'semantic-ui-react'
 
 export const ResidentCard = ( {residents} ) => {
 
-    
+    // const daysSinceIntake = () => {residents.days}
     
 
     return (
