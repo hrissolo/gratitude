@@ -19,6 +19,7 @@ export const ApplicantForm = () => {
       intake_date: 1234,
       applied_date: Date.now(),
       accepted_date: 1234,
+      deny_date: 1234,
       discharge_date: 1234,
       notes: "",
       payment_method: "",

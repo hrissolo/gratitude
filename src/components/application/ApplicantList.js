@@ -17,7 +17,7 @@ export const ApplicantList = () => {
 
     const allApplicants = ((rezzy) => 
       {
-        if (rezzy.applied_date > 1234 && rezzy.accepted_date <1235) {
+        if (rezzy.applied_date > 1234 && rezzy.accepted_date < 1235 && rezzy.discharge_date < 1235 && rezzy.deny_date < 1235) {
         return ( 
         <ApplicantCard key={rezzy.id} residents={rezzy} /> ) } 
     
@@ -39,6 +39,7 @@ export const ApplicantList = () => {
         <Table.Header>
         <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell>Status</Table.HeaderCell>
             <Table.HeaderCell>Applied Date</Table.HeaderCell>
             <Table.HeaderCell>Current Location</Table.HeaderCell>
             <Table.HeaderCell>Payment Method</Table.HeaderCell>
