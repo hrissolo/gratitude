@@ -19,7 +19,7 @@ export const ApplicantList = () => {
       {
         if (rezzy.applied_date > 1234 && rezzy.accepted_date < 1235 && rezzy.discharge_date < 1235 && rezzy.deny_date < 1235) {
         return ( 
-        <ApplicantCard key={rezzy.id} residents={rezzy} /> ) } 
+        <ApplicantCard key={rezzy.id} resident={rezzy} /> ) } 
     
         else {
           return null

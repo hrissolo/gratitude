@@ -43,7 +43,9 @@ export const ResidentDetail = () => {
             <div className="resident__gender"><br/>{resident.gender}</div>
             <div className="resident__house"><b>House:</b><br/> {resident.houseId}</div>
             <div className="resident__room"><b>Room:</b><br/>{resident.roomId}</div>
-            
+            <div className="resident__applied"><br/>Applied Date: {new Date(resident.applied_date).toLocaleDateString('en-US')}</div>
+            <div className="resident__intake"><br/>Intake Date: {new Date(resident.intake_date).toLocaleDateString('en-US')}</div>
+            {/* <div className="resident__discharge"><br/>Discharge Date: {new Date(resident.discharge_date).toLocaleDateString('en-US')}</div> */}
             <div className="resident__notes"><b>Notes:</b><br/> {resident.notes}</div>
             <br/>
         {editButton()}
