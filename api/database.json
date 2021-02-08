@@ -11,31 +11,36 @@
       "id": 1,
       "name": "OG",
       "adminId": 1,
-      "photo": "public/house-imgs/OG.png"
+      "photo": "public/house-imgs/OG.png",
+      "totalBeds": 11
     },
     {
       "id": 2,
       "name": "G2",
       "adminId": 1,
-      "photo": "house-imgs/G2.jpg"
+      "photo": "house-imgs/G2.jpg",
+      "totalBeds": 5
     },
     {
       "id": 3,
       "name": "G3",
       "adminId": 1,
-      "photo": "public/house-imgs/G3.jpg"
+      "photo": "public/house-imgs/G3.jpg",
+      "totalBeds": 9
     },
     {
       "id": 4,
       "name": "G4",
       "adminId": 1,
-      "photo": "public/house-imgs/G4.jpg"
+      "photo": "public/house-imgs/G4.jpg",
+      "totalBeds": 8
     },
     {
       "id": 5,
       "name": "GBH",
       "adminId": 1,
-      "photo": "public/house-imgs/GBH.jpg"
+      "photo": "public/house-imgs/GBH.jpg",
+      "totalBeds": 12
     }
   ],
   "rooms": [
@@ -190,6 +195,42 @@
       "current_location": "awea",
       "desired_intake_date": "weawe",
       "id": 8
+    },
+    {
+      "firstName": "this is a test",
+      "lastName": "denying test",
+      "birthdate": "hdjaksh",
+      "gender": "hjkhjk",
+      "houseId": 1234,
+      "roomId": 1234,
+      "intake_date": 1234,
+      "applied_date": 1612807355599,
+      "accepted_date": 1234,
+      "deny_date": 1612808041156,
+      "discharge_date": 1234,
+      "notes": "",
+      "payment_method": "hjkhjk",
+      "current_location": "hjhfdrdr",
+      "desired_intake_date": "fftttt",
+      "id": 9
+    },
+    {
+      "firstName": "Rosie",
+      "lastName": "Yas",
+      "birthdate": "fhjdfsh",
+      "gender": "hjgj",
+      "houseId": 1234,
+      "roomId": 1234,
+      "intake_date": 1234,
+      "applied_date": 1612818829184,
+      "accepted_date": 1612818848240,
+      "deny_date": 1234,
+      "discharge_date": 1234,
+      "notes": "",
+      "payment_method": "ggf",
+      "current_location": "tf",
+      "desired_intake_date": "tf",
+      "id": 10
     }
   ]
 }

@@ -4,9 +4,14 @@ import { ResidentContext } from "./ResidentProvider"
 import { Table } from 'semantic-ui-react'
 
 
+ 
+
 export const ResidentCard = ( {residents} ) => {
 
-    // const daysSinceIntake = () => {residents.days}
+    
+    let one_day=1000*60*60*24;
+    const daysSinceIntake = 
+        (Math.round((Date.now() - residents.intake_date) / one_day))
     
 
     return (
@@ -16,7 +21,7 @@ export const ResidentCard = ( {residents} ) => {
             <Table.Cell><Link to={`/residents/${residents.id}`}>{residents.firstName} {residents.lastName}</Link></Table.Cell>
             <Table.Cell>{residents.houseId}</Table.Cell>
             <Table.Cell>{residents.roomId}</Table.Cell>
-            <Table.Cell> daysSinceIntake()</Table.Cell>
+            <Table.Cell>{daysSinceIntake}</Table.Cell>
         </Table.Row>
                
         

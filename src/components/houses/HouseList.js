@@ -24,7 +24,7 @@ export const HouseList = () => {
         <Item.Group divided>
             {
                 houses.map(houses => {
-                return <HouseCard key={houses.id} houses={houses} />
+                return <HouseCard key={houses.id} house={houses} />
                 })
             }
         </Item.Group>

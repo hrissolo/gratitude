@@ -6,19 +6,9 @@ import { Table, Button } from 'semantic-ui-react'
 
 export const ApplicantCard = ( {resident} ) => {
 
-    const { getResidentById, editResident } = useContext(ResidentContext)
-	
-	
+    const { editResident } = useContext(ResidentContext)
 	
 	const history = useHistory();
-
-    // useEffect(() => {
-    //     getResidentById(residentId)
-    //     .then((response) => {
-	// 		setResident(response)
-	// 	})
-	// 		}, [residentId])
-            
 
     const acceptButton = (() => {
         let updatedResident = {...resident}
@@ -33,15 +23,18 @@ export const ApplicantCard = ( {resident} ) => {
         editResident(updatedResident)
     })
 
+  
 
     return (
         <Table.Row>
             <Table.Cell>{resident.lastName}, {resident.firstName}</Table.Cell>
             <Table.Cell>
                 <Button.Group>
-                <Button onClick={()=> acceptButton()}>Accept</Button>
+                <Button onClick={() => acceptButton()}>Accept</Button>
                 <Button.Or />
-                <Button onClick={()=> denyButton()}>Deny</Button>
+
+                <Button onClick={() => denyButton()}>Deny</Button>
+
                 </Button.Group>
             </Table.Cell>
             <Table.Cell>{new Date(resident.applied_date).toLocaleDateString('en-US')}</Table.Cell>
@@ -52,3 +45,4 @@ export const ApplicantCard = ( {resident} ) => {
         
     )
 }
+

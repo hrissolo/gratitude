@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom"
 import { HouseList } from "./components/houses/HouseList";
 import { HouseProvider } from "./components/houses/HouseProvider";
+import { HouseDetail } from "./components/houses/HouseDetail"
 import { ResidentProvider } from "./components/residents/ResidentProvider"
 import { ResidentList } from "./components/residents/ResidentList"
 import { AlumniList } from "./components/alumni/AlumniList"
@@ -9,6 +10,7 @@ import { ResidentDetail } from "./components/residents/ResidentDetail"
 import { ResidentForm } from "./components/residents/ResidentForm"
 import { ApplicantTabs } from "./components/application/ApplicantTabs"
 import { ApplicantForm } from "./components/application/ApplicantForm";
+
 
 //import all of the providers + lists here// 
 
@@ -20,6 +22,14 @@ export const ApplicationViews = props => {
         <Route exact path="/">
           <HouseList/>
         </Route>
+      </HouseProvider>
+
+      <HouseProvider>
+        <ResidentProvider>
+          <Route exact path="/houses/:houseId(\d+)">
+            <HouseDetail/>
+          </Route>
+        </ResidentProvider>
       </HouseProvider>
 
       <ResidentProvider>

@@ -3,15 +3,16 @@ import { Link } from "react-router-dom"
 import { HouseContext } from "./HouseProvider"
 import { Item } from 'semantic-ui-react'
 
-export const HouseCard = ( {houses} ) => {
+
+export const HouseCard = ( {house} ) => {
 
     return (
 
         <Item>
-            <Link to="/">
-                <Item.Image size='tiny' src={houses.photo}/>
+            <Link to={`/houses/${house.id}`}>
+                <Item.Image size='tiny' src={house.photo}/>
                     <Item.Content verticalAlign='middle'><h3 className="houses_Card">
-                        { houses.name } </h3> 3/3 rooms filled 
+                        { house.name } </h3> Available Beds: ___ / {house.totalBeds}
                     </Item.Content>
             </Link>
         </Item>    

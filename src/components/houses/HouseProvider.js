@@ -18,7 +18,6 @@ export const HouseProvider = (props) => {
             .then(res => res.json())
     }
 
-
     
     return (
         <HouseContext.Provider value={{
