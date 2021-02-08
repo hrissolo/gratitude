@@ -27,6 +27,13 @@ export const ApplicantCard = ( {resident} ) => {
     })
 
 
+    const denyButton = (() => {
+        let updatedResident = {...resident}
+        updatedResident["deny_date"] = Date.now()
+        editResident(updatedResident)
+    })
+
+
     return (
         <Table.Row>
             <Table.Cell>{resident.lastName}, {resident.firstName}</Table.Cell>
@@ -34,7 +41,7 @@ export const ApplicantCard = ( {resident} ) => {
                 <Button.Group>
                 <Button onClick={()=> acceptButton()}>Accept</Button>
                 <Button.Or />
-                <Button>Deny</Button>
+                <Button onClick={()=> denyButton()}>Deny</Button>
                 </Button.Group>
             </Table.Cell>
             <Table.Cell>{new Date(resident.applied_date).toLocaleDateString('en-US')}</Table.Cell>
