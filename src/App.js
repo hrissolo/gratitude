@@ -24,13 +24,11 @@ export const ApplicationViews = props => {
         </Route>
       </HouseProvider>
 
-      <HouseProvider>
         <ResidentProvider>
           <Route exact path="/houses/:houseId(\d+)">
-            <HouseDetail/>
+            <ResidentList/>
           </Route>
         </ResidentProvider>
-      </HouseProvider>
 
       <ResidentProvider>
         <Route exact path="/residents">

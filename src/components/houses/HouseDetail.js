@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react"
-import { ResidentContext } from "../residents/ResidentProvider"
 import { HouseContext } from "./HouseProvider"
 import { useParams, useHistory, Link } from "react-router-dom"
 import {Button} from "semantic-ui-react"
@@ -7,7 +6,7 @@ import {Button} from "semantic-ui-react"
 
 export const HouseDetail = () => {
     const { getHouseById } = useContext(HouseContext)
-    const { getResidentPerHouse } = useContext(ResidentContext)
+    
 	
 	const [house, setHouses] = useState({})
 	

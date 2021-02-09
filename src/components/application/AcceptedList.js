@@ -39,6 +39,7 @@ export const AcceptedList = () => {
         <Table.Header>
         <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell>Intake Status</Table.HeaderCell>
             <Table.HeaderCell>Applied Date</Table.HeaderCell>
             <Table.HeaderCell>Desired Intake Date</Table.HeaderCell>
         </Table.Row>
