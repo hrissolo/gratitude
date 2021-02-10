@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { HouseContext } from "./HouseProvider"
 import { useParams, useHistory, Link } from "react-router-dom"
 import {Button} from "semantic-ui-react"
-
+import "./House.css"
 
 export const HouseDetail = () => {
     const { getHouseById } = useContext(HouseContext)

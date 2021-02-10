@@ -3,7 +3,7 @@ import { HouseContext} from "./HouseProvider"
 import { HouseCard } from "./HouseCard"
 import {useHistory} from "react-router-dom"
 import { Item } from 'semantic-ui-react'
-
+import "./House.css"
 
 export const HouseList = () => {
     const { houses, getHouses } = useContext(HouseContext)

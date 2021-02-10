@@ -4,7 +4,7 @@ import {ResidentCard} from "../residents/ResidentCard"
 import {AlumniCard} from "./AlumniCard"
 import {useHistory} from "react-router-dom"
 import { Table } from 'semantic-ui-react'
-
+import "./Alumni.css"
 
 export const AlumniList = () => {
     const { residents, getResidents } = useContext(ResidentContext)

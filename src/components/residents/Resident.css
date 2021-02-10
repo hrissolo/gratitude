@@ -1,0 +1,18 @@
+/* Style page content */
+.residentListcontainer {
+    margin-left: 200px; /* Same as the width of the sidebar */
+    padding: 10px 10px;
+    margin-top: 10px;
+  }
+
+.resident_detail {
+    margin-left: 200px; /* Same as the width of the sidebar */
+    padding: 10px 10px;
+    margin-top: 10px;
+  }
+
+.editFormContainer  {
+    margin-left: 200px; /* Same as the width of the sidebar */
+    padding: 10px 10px;
+    margin-top: 10px;
+  }

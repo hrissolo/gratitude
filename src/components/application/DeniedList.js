@@ -3,7 +3,7 @@ import { ResidentContext} from "../residents/ResidentProvider"
 import { DeniedCard } from "./DeniedCard"
 import {useHistory} from "react-router-dom"
 import { Table } from 'semantic-ui-react'
-
+import "./Application.css"
 
 export const DeniedList = () => {
     const { residents, getResidents } = useContext(ResidentContext)

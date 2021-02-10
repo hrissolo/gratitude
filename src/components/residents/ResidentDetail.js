@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { ResidentContext } from "./ResidentProvider"
 import { useParams, useHistory, Link } from "react-router-dom"
 import {Button} from "semantic-ui-react"
-
+import "./Resident.css"
 
 export const ResidentDetail = () => {
     const { getResidentById } = useContext(ResidentContext)
@@ -33,6 +33,17 @@ export const ResidentDetail = () => {
                         </>
                     )
             })
+
+            // const showDischargeDate = ((rezzy) => 
+            // {
+            //   if (rezzy.discharge_date > 1234 ) {
+            //   return ( 
+            //   resident.discharge_date ) } 
+          
+            //   else {
+            //     return {display:'none'}
+            //   }
+            // })
 
 
     return (

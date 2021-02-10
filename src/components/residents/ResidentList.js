@@ -3,7 +3,7 @@ import { ResidentContext} from "./ResidentProvider"
 import { ResidentCard } from "./ResidentCard"
 import { useHistory, useParams } from "react-router-dom"
 import { Table } from 'semantic-ui-react'
-
+import "./Resident.css"
 
 export const ResidentList = () => {
     const { residents, getResidents } = useContext(ResidentContext)

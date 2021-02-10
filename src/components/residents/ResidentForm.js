@@ -2,7 +2,7 @@ import React, { useContext, useRef, useEffect, useState } from "react"
 import { ResidentContext } from "./ResidentProvider"
 import { useHistory, useParams } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react'
-
+import "./Resident.css"
 //Edit current resident information
 
 export const ResidentForm = (props) => {
