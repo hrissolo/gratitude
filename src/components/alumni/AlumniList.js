@@ -4,7 +4,7 @@ import {ResidentCard} from "../residents/ResidentCard"
 import {AlumniCard} from "./AlumniCard"
 import {useHistory} from "react-router-dom"
 import { Table } from 'semantic-ui-react'
-
+import "./Alumni.css"
 
 export const AlumniList = () => {
     const { residents, getResidents } = useContext(ResidentContext)
@@ -18,7 +18,7 @@ export const AlumniList = () => {
 
     const justCurrentAlumni = ((alumni) => 
       {
-        if (alumni.discharge_date !== null) {
+        if (alumni.discharge_date > 1234 && alumni.intake_date > 1234) {
         return ( 
         <AlumniCard key={alumni.id} residents={alumni} /> )
         } else {

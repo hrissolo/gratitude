@@ -3,7 +3,7 @@ import { ResidentContext} from "../residents/ResidentProvider"
 import { AcceptedCard } from "./AcceptedCard"
 import {useHistory} from "react-router-dom"
 import { Table } from 'semantic-ui-react'
-
+import "./Application.css"
 
 export const AcceptedList = () => {
     const { residents, getResidents } = useContext(ResidentContext)
@@ -17,7 +17,7 @@ export const AcceptedList = () => {
 
     const acceptedApplicants = ((rezzy) => 
       {
-        if (rezzy.discharge_date === null && rezzy.intake_date === null) {
+        if (rezzy.accepted_date > 1234 && rezzy.intake_date < 1235) {
         return ( 
         <AcceptedCard key={rezzy.id} residents={rezzy} /> ) } 
     
@@ -39,6 +39,7 @@ export const AcceptedList = () => {
         <Table.Header>
         <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell>Intake Status</Table.HeaderCell>
             <Table.HeaderCell>Applied Date</Table.HeaderCell>
             <Table.HeaderCell>Desired Intake Date</Table.HeaderCell>
         </Table.Row>

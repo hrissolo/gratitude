@@ -8,7 +8,7 @@ export const NavBar = props => {
 
   return (
     <ul className="navbar">
-      <li className="navbar__item active">
+      <li className="navbar__item ">
         <Link className="navbar__link" to="/">
           The Gratitude Houses
         </Link>
@@ -32,7 +32,9 @@ export const NavBar = props => {
       </li>
 
       <li className="navbar__item">
+        <Link className="navbar__link" to="/">
           Log out 
+          </Link>
       </li>
       
     </ul>

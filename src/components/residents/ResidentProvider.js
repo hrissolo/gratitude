@@ -1,11 +1,13 @@
 import React, { useState, createContext } from "react"
-
+import { useParams } from "react-router-dom"
+import "./Resident.css"
 export const ResidentContext = createContext()
 
 
 export const ResidentProvider = (props) => {
     const [residents, setResidents] = useState([])
-
+    const [houses, setHouses] = useState({})
+    
     const addResident = applicant => {
         return fetch("http://localhost:8088/residents", {
             method: "POST",
@@ -38,10 +40,16 @@ export const ResidentProvider = (props) => {
         })
             .then(getResidents)
     }
+
+    const getRezPerHouse = (id) => {
+        return fetch(`http://localhost:8088/houses/${id}?&_embed=residents&_embed=rooms`)
+            .then(res => res.json())
+            .then(setHouses)
+    }
     
     return (
         <ResidentContext.Provider value={{
-            residents, getResidents, getResidentById, editResident, addResident
+            residents, getResidents, getResidentById, editResident, addResident, houses, getRezPerHouse
         }}>
             {props.children}
         </ResidentContext.Provider>

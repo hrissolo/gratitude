@@ -1,0 +1,24 @@
+.navbar {
+    height: 100%;
+    width: 200px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: -10; /* Stay at the top */
+    left: 0;
+    background-color: #F9FAFB;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+.navbar__link {
+    padding: 6px 8px 18px 3px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  
+  ul {
+      list-style-type: none;
+  }

@@ -1,23 +1,31 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { ResidentContext} from "./ResidentProvider"
 import { ResidentCard } from "./ResidentCard"
-import {useHistory} from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 import { Table } from 'semantic-ui-react'
-
+import "./Resident.css"
 
 export const ResidentList = () => {
     const { residents, getResidents } = useContext(ResidentContext)
+    const { houses, getRezPerHouse } = useContext(ResidentContext)
     const history = useHistory()
+    const {houseId} = useParams() || ""
+    const { houseResidents, setHouseResidents } = useState([]) 
     
 	//useEffect - reach out to the world for something
     useEffect(() => {
-		getResidents()
-		
+      console.log(houseId)
+      if (houseId) {
+        getRezPerHouse(houseId)
+      } else {
+        getResidents()
+      }
     }, [])
+
 
     const justCurrentResidents = ((rezzy) => 
       {
-        if (rezzy.discharge_date === null && rezzy.intake_date !== null ) {
+        if (rezzy.intake_date > 1234 && rezzy.applied_date > 1234 && rezzy.discharge_date < 1235) {
         return ( 
         <ResidentCard key={rezzy.id} residents={rezzy} /> )
         } else {
@@ -25,6 +33,20 @@ export const ResidentList = () => {
         }
       })
 
+      let cResidents = []
+      const determineResidents = () => {
+        if (houseId) {
+          let whichOne = "houseObj" 
+          if (houses.residents) {
+            cResidents = houses.residents 
+          } else {
+            cResidents = []
+          }
+        } else {
+          let whichOne = "resArray" 
+          cResidents = residents
+        }
+      }
 
     return (
       
@@ -34,6 +56,10 @@ export const ResidentList = () => {
           
       <div className="residentContainer">
       
+      {determineResidents()}
+        
+
+
       <Table striped>
         <Table.Header>
         <Table.Row>
@@ -44,15 +70,17 @@ export const ResidentList = () => {
         </Table.Row>
             </Table.Header>
 
-        <Table.Body>
 
+        <Table.Body>
         
-        {
-        residents.map(residents => {
+        { 
+          cResidents.map(person => {
           
-          return justCurrentResidents(residents)
+          return justCurrentResidents(person)
           })
         }
+
+
 
         </Table.Body>
         </Table>

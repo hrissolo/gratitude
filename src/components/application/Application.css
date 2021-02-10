@@ -1,0 +1,15 @@
+
+
+  .tabContainer  {
+    margin-left: 200px; /* Same as the width of the sidebar */
+    padding: 10px 10px;
+    margin-top: 10px;
+  }
+
+
+  /*delete once login screen is up*/
+  .form--login {  
+    margin-left: 200px; /* Same as the width of the sidebar */
+    padding: 10px 10px;
+    margin-top: 10px;
+}

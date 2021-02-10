@@ -3,7 +3,7 @@ import { ResidentContext} from "../residents/ResidentProvider"
 import { DeniedCard } from "./DeniedCard"
 import {useHistory} from "react-router-dom"
 import { Table } from 'semantic-ui-react'
-
+import "./Application.css"
 
 export const DeniedList = () => {
     const { residents, getResidents } = useContext(ResidentContext)
@@ -17,7 +17,7 @@ export const DeniedList = () => {
 
     const deniedApplicants = ((rezzy) => 
       {
-        if (rezzy.discharge_date === null && rezzy.intake_date === null) {
+        if (rezzy.accepted_date < 1235 && rezzy.deny_date > 1234 ) {
         return ( 
         <DeniedCard key={rezzy.id} residents={rezzy} /> ) } 
     

@@ -1,20 +1,48 @@
-import React, { useContext } from "react"
-import { Link } from "react-router-dom"
+import React, { useContext, useEffect, useState } from "react"
+import { Link, useHistory,useParams } from "react-router-dom"
 import { ResidentContext } from "../residents/ResidentProvider"
-import { Table } from 'semantic-ui-react'
+import { Table, Button } from 'semantic-ui-react'
 
 
-export const ApplicantCard = ( {residents} ) => {
+export const ApplicantCard = ( {resident} ) => {
 
-    
+    const { editResident } = useContext(ResidentContext)
+	
+	const history = useHistory();
+
+    const acceptButton = (() => {
+        let updatedResident = {...resident}
+        updatedResident["accepted_date"] = Date.now()
+        editResident(updatedResident)
+    })
+
+
+    const denyButton = (() => {
+        let updatedResident = {...resident}
+        updatedResident["deny_date"] = Date.now()
+        editResident(updatedResident)
+    })
+
+  
+
     return (
         <Table.Row>
-            <Table.Cell>{residents.lastName}, {residents.firstName}</Table.Cell>
-            <Table.Cell>{residents.applied_date}</Table.Cell>
-            <Table.Cell>{residents.current_location}</Table.Cell>
-            <Table.Cell>{residents.payment_method}</Table.Cell>
+            <Table.Cell>{resident.lastName}, {resident.firstName}</Table.Cell>
+            <Table.Cell>
+                <Button.Group>
+                <Button onClick={() => acceptButton()}>Accept</Button>
+                <Button.Or />
+
+                <Button onClick={() => denyButton()}>Deny</Button>
+
+                </Button.Group>
+            </Table.Cell>
+            <Table.Cell>{new Date(resident.applied_date).toLocaleDateString('en-US')}</Table.Cell>
+            <Table.Cell>{resident.current_location}</Table.Cell>
+            <Table.Cell>{resident.payment_method}</Table.Cell>
         </Table.Row>
                
         
     )
 }
+
