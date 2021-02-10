@@ -14,7 +14,6 @@ export const ResidentList = () => {
     
 	//useEffect - reach out to the world for something
     useEffect(() => {
-      console.log(houseId)
       if (houseId) {
         getRezPerHouse(houseId)
       } else {

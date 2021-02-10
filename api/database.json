@@ -12,35 +12,45 @@
       "name": "OG",
       "adminId": 1,
       "photo": "public/house-imgs/OG.png",
-      "totalBeds": 11
+      "totalBeds": 11,
+      "occupiedBeds": 1,
+      "gender": "Male"
     },
     {
       "id": 2,
       "name": "G2",
       "adminId": 1,
       "photo": "house-imgs/G2.jpg",
-      "totalBeds": 5
+      "totalBeds": 5,
+      "occupiedBeds": 1,
+      "gender": "Male"
     },
     {
       "id": 3,
       "name": "G3",
       "adminId": 1,
       "photo": "public/house-imgs/G3.jpg",
-      "totalBeds": 9
+      "totalBeds": 9,
+      "occupiedBeds": 0,
+      "gender": "Female"
     },
     {
       "id": 4,
       "name": "G4",
       "adminId": 1,
       "photo": "public/house-imgs/G4.jpg",
-      "totalBeds": 8
+      "totalBeds": 8,
+      "occupiedBeds": 0,
+      "gender": "Male"
     },
     {
       "id": 5,
       "name": "GBH",
       "adminId": 1,
       "photo": "public/house-imgs/GBH.jpg",
-      "totalBeds": 12
+      "totalBeds": 12,
+      "occupiedBeds": 0,
+      "gender": "Male"
     }
   ],
   "rooms": [
@@ -107,13 +117,13 @@
       "notes": "Can't follow the rules"
     },
     {
-      "firstName": "Richie",
+      "firstName": "Rick",
       "lastName": "Slope",
       "birthdate": "12/3/1972",
       "gender": "Male",
       "houseId": 1234,
       "roomId": 1234,
-      "intake_date": 1234,
+      "intake_date": 1612975248323,
       "applied_date": 1612556084713,
       "accepted_date": 1612556084714,
       "deny_date": 1234,
@@ -167,7 +177,7 @@
       "gender": "jkljkl",
       "houseId": 1234,
       "roomId": 1234,
-      "intake_date": 1234,
+      "intake_date": 1612971564361,
       "applied_date": 1612562201801,
       "accepted_date": 1612803880285,
       "deny_date": 1234,
@@ -221,7 +231,7 @@
       "gender": "hjgj",
       "houseId": 1234,
       "roomId": 1234,
-      "intake_date": 1234,
+      "intake_date": 1612974666701,
       "applied_date": 1612818829184,
       "accepted_date": 1612818848240,
       "deny_date": 1234,

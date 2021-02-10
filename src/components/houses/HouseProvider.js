@@ -18,11 +18,21 @@ export const HouseProvider = (props) => {
             .then(res => res.json())
     }
 
+    const editHouse = house => {
+        return fetch(`http://localhost:8088/houses/${house.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(house)
+        })
+            .then(getHouses)
+    }
 
     
     return (
         <HouseContext.Provider value={{
-            houses, getHouses, getHouseById
+            houses, getHouses, getHouseById, editHouse
         }}>
             {props.children}
         </HouseContext.Provider>

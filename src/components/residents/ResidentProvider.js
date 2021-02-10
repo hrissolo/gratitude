@@ -1,6 +1,5 @@
 import React, { useState, createContext } from "react"
 import { useParams } from "react-router-dom"
-import "./Resident.css"
 export const ResidentContext = createContext()
 
 

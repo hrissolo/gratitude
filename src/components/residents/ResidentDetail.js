@@ -21,27 +21,51 @@ export const ResidentDetail = () => {
             
 
     const editButton = (() => {
-                return (
-                        <>
-                            <Button color="olive" onClick={() => {
-                               
-                                    history.push(`/residents/edit/${resident.id}`)
-                            
-            
-                            }}>Edit Resident
-                            </Button>
-                        </>
-                    )
-            })
+        return (
+            <>
+                <Button color="olive" onClick={() => {
+                    history.push(`/residents/edit/${resident.id}`)
+                }}>Edit Resident
+                </Button>
+            </>
+        )
+    })
 
-            // const showDischargeDate = ((rezzy) => 
+    const housePlacementButton = (() => {
+
+        if (resident.houseId === 1234 && resident.roomId === 1234) {
+            return (
+                <>
+                    <Button onClick={() => {
+                        history.push(`/residents/${resident.id}`)
+                    }}>Choose house/room 
+                    </Button>
+                </>
+            )}
+            else {
+                return (
+                    <>
+              <div className="resident__house"><b>House:</b><br/> {resident.houseId}</div>
+              <div className="resident__room"><b>Room:</b><br/>{resident.roomId}</div> 
+              </>
+                )
+                
+            }
+    })
+
+
+            // const showHouseNRoom = (() => 
             // {
-            //   if (rezzy.discharge_date > 1234 ) {
+            //   if (resident.houseId === 1235 && resident.roomId === 1235) {
             //   return ( 
-            //   resident.discharge_date ) } 
+            //     housePlacementButton() ) } 
           
             //   else {
-            //     return {display:'none'}
+            //       return 
+            //       <>
+            //     <div className="resident__house"><b>House:</b><br/> {resident.houseId}</div>
+            //     <div className="resident__room"><b>Room:</b><br/>{resident.roomId}</div> 
+            //     </>
             //   }
             // })
 
@@ -52,14 +76,14 @@ export const ResidentDetail = () => {
             <h3 className="resident__name">{resident.firstName} {resident.lastName}</h3>
             <div className="resident__bday"><br/>Birthdate: {resident.birthdate}</div>
             <div className="resident__gender"><br/>{resident.gender}</div>
-            <div className="resident__house"><b>House:</b><br/> {resident.houseId}</div>
-            <div className="resident__room"><b>Room:</b><br/>{resident.roomId}</div>
+            {housePlacementButton()}
             <div className="resident__applied"><br/>Applied Date: {new Date(resident.applied_date).toLocaleDateString('en-US')}</div>
             <div className="resident__intake"><br/>Intake Date: {new Date(resident.intake_date).toLocaleDateString('en-US')}</div>
             {/* <div className="resident__discharge"><br/>Discharge Date: {new Date(resident.discharge_date).toLocaleDateString('en-US')}</div> */}
             <div className="resident__notes"><b>Notes:</b><br/> {resident.notes}</div>
             <br/>
         {editButton()}
+        
         </section>
     )
 }
