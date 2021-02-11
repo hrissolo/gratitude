@@ -19,7 +19,7 @@ export const HouseList = () => {
       
     <>
     <div className="houseListcontainer">
-      <h1 className="houseTitle">G Houses</h1>
+      <h1 className="houseTitle">The Gratitude Houses</h1>
           
         <Item.Group divided>
             {

@@ -14,7 +14,6 @@ export const ResidentList = () => {
     
 	//useEffect - reach out to the world for something
     useEffect(() => {
-      console.log(houseId)
       if (houseId) {
         getRezPerHouse(houseId)
       } else {
@@ -64,6 +63,7 @@ export const ResidentList = () => {
         <Table.Header>
         <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell>Status</Table.HeaderCell>
             <Table.HeaderCell>House</Table.HeaderCell>
             <Table.HeaderCell>Room</Table.HeaderCell>
             <Table.HeaderCell>Days since intake</Table.HeaderCell>

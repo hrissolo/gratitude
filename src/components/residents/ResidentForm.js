@@ -3,11 +3,13 @@ import { ResidentContext } from "./ResidentProvider"
 import { useHistory, useParams } from 'react-router-dom';
 import { Button, Form } from 'semantic-ui-react'
 import "./Resident.css"
+import { ResidentList } from "./ResidentList";
+import { HouseContext } from "../houses/HouseProvider";
 //Edit current resident information
 
 export const ResidentForm = (props) => {
     const { addResident, getResidents, getResidentById, editResident } = useContext(ResidentContext)
-
+    
 
     //for edit, hold on to state of task in this view
     const [residents, setResidents] = useState({firstName: "", lastName: "", birthdate: "",gender: "",houseId: "", roomId: "", notes: ""})
@@ -57,12 +59,17 @@ export const ResidentForm = (props) => {
                     lastName: residents.lastName,
                     birthdate: residents.birthdate,
                     gender: residents.gender,
-                    houseId: residents.houseId,
-                    roomId: residents.roomId,
+                    houseId: parseInt(residents.houseId),
+                    roomId: parseInt(residents.roomId),
                     intake_date: residents.intake_date,
                     applied_date: residents.applied_date,
+                    accepted_date: residents.accepted_date,
+                    deny_date: residents.deny_date,
                     discharge_date: residents.discharge_date,
-                    notes: residents.notes
+                    notes: residents.notes,
+                    payment_method: residents.payment_method,
+                    current_location: residents.current_location,
+                    desired_intake_date: residents.desired_intake_date
                     
                 })
                 .then(() => history.push(`/residents/${residents.id}`))
@@ -78,8 +85,13 @@ export const ResidentForm = (props) => {
                     roomId: residents.roomId,
                     intake_date: residents.intake_date,
                     applied_date: residents.applied_date,
+                    accepted_date: residents.accepted_date,
+                    deny_date: residents.deny_date,
                     discharge_date: residents.discharge_date,
-                    notes: residents.notes
+                    notes: residents.notes,
+                    payment_method: residents.payment_method,
+                    current_location: residents.current_location,
+                    desired_intake_date: residents.desired_intake_date
                 })
                 .then(() => history.push("/residents"))
             }
@@ -92,7 +104,8 @@ export const ResidentForm = (props) => {
         <Form className="taskForm">
             <div className="edit-form-align">
             <h2 className="taskForm__title">Edit Profile</h2>
-            <Form.Group><Form.Field >
+            <Form.Group widths='equal'>
+                <Form.Field >
                 <div className="form-group">
                     <label htmlFor="firstn">First Name: </label>
                     <input type="text" name="firstName" width={5} id="firstName" value={residents.firstName} required autoFocus className="form-control" placeholder="First name" 
@@ -107,11 +120,14 @@ export const ResidentForm = (props) => {
                     onChange={handleControlledInputChange}
                     ></input>
                 </div>
-            </Form.Field></Form.Group>
+            </Form.Field>
+            </Form.Group>
+            
+            <Form.Group widths='equal'>
             <Form.Field >
                 <div className="form-group">
                     <label htmlFor="bday">Birth Date: </label>
-                    <input type="text"  name="birthdate" value={residents.birthdate} className="form-control"
+                    <input type="text"  width={5} name="birthdate" value={residents.birthdate} className="form-control"
                     onChange={handleControlledInputChange}
                     ></input>
                 </div>
@@ -120,19 +136,41 @@ export const ResidentForm = (props) => {
             <Form.Field >
                 <div className="form-group">
                     <label htmlFor="completeTask">Gender: </label>
-                    <input type="text"  name="gender" value={residents.gender} className="form-control"
+                    <input type="text"  width={6} name="gender" value={residents.gender} className="form-control"
                     onChange={handleControlledInputChange}
                     ></input>
                 </div>
             </Form.Field>
+            </Form.Group >
+
             <Form.Field >
                 <div className="form-group">
                     <label htmlFor="completeTask">Notes: </label>
-                    <input type="text"  name="notes" value={residents.notes} className="form-control"
+                    <input type="text"  width={6} name="notes" value={residents.notes} className="form-control"
                     onChange={handleControlledInputChange}
                     ></input>
                 </div>
             </Form.Field>
+            
+            <Form.Group widths='equal'>
+            <Form.Field >
+                <div className="form-group">
+                    <label htmlFor="completeTask">House: </label>
+                    <input type="number"  width={5} name="houseId" value={residents.houseId} className="form-control"
+                    onChange={handleControlledInputChange}
+                    ></input>
+                </div>
+            </Form.Field>
+
+            <Form.Field >
+                <div className="form-group">
+                    <label htmlFor="completeTask">Room: </label>
+                    <input type="number"  width={5} name="roomId" value={residents.roomId}  className="form-control"
+                    onChange={handleControlledInputChange}
+                    ></input>
+                </div>
+            </Form.Field>
+            </Form.Group>
             <Button color="purple"type="saveResident"
                 disabled={isLoading}
                 onClick = {evt => {

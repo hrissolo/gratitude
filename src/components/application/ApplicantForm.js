@@ -52,7 +52,7 @@ export const ApplicantForm = () => {
              <h1 className="form-register-txt">
                Apply to Gratitude Houses 
              </h1>
-               <Form.Group><Form.Field>
+               <Form.Group widths='equal'><Form.Field>
                <div className="registerLabel">First Name</div>
       
             <input
@@ -110,7 +110,7 @@ export const ApplicantForm = () => {
                 onChange={handleInputChange}
               /></Form.Field>
               
-              <div className="registerLabel"> Payment method: </div>
+              <div className="registerLabel"> Payment method</div>
               <Form.Field><input
                 id="payment_method"
                 type="text"

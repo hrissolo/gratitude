@@ -1,6 +1,5 @@
 import React, { useState, createContext } from "react"
 import { useParams } from "react-router-dom"
-import "./Resident.css"
 export const ResidentContext = createContext()
 
 
@@ -46,10 +45,16 @@ export const ResidentProvider = (props) => {
             .then(res => res.json())
             .then(setHouses)
     }
+
+    const housesWithAllResidents = () => {
+        return fetch (`http://localhost:8088/houses?_embed=residents`)
+            .then(res=> res.json())
+    }
     
     return (
         <ResidentContext.Provider value={{
             residents, getResidents, getResidentById, editResident, addResident, houses, getRezPerHouse
+            , housesWithAllResidents
         }}>
             {props.children}
         </ResidentContext.Provider>
