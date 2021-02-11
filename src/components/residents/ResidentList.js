@@ -63,6 +63,7 @@ export const ResidentList = () => {
         <Table.Header>
         <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell>Status</Table.HeaderCell>
             <Table.HeaderCell>House</Table.HeaderCell>
             <Table.HeaderCell>Room</Table.HeaderCell>
             <Table.HeaderCell>Days since intake</Table.HeaderCell>

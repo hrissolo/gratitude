@@ -89,18 +89,19 @@ export const ResidentDetail = () => {
     return (
         <section className="resident_detail">
             
-            <h3 className="resident__name">{resident.firstName} {resident.lastName}</h3>
-            <div className="resident__bday"><br/>Birthdate: {resident.birthdate}</div>
-            <div className="resident__gender"><br/>{resident.gender}</div>
-            <div className="resident__house"><b>House:</b><br/> {resident.houseId}</div>
-            <div className="resident__room"><b>Room:</b><br/>{resident.roomId}</div> 
-            <div className="resident__applied"><br/>Applied Date: {new Date(resident.applied_date).toLocaleDateString('en-US')}</div>
-            <div className="resident__intake"><br/>Intake Date: {new Date(resident.intake_date).toLocaleDateString('en-US')}</div>
+            <h2 className="resident__name">{resident.firstName} {resident.lastName}</h2>
+            <div className="resident__gender">{resident.gender}</div>
+            <div className="resident__bday"><b>Birthdate:</b> {resident.birthdate}</div>
+            <br/>
+            <div className="resident__house"><b>House:</b> {resident.houseId}</div>
+            <div className="resident__room"><b>Room:</b> {resident.roomId}</div> 
+            <div className="resident__applied"><br/><b>Applied Date:</b> {new Date(resident.applied_date).toLocaleDateString('en-US')}</div>
+            <div className="resident__intake"><b>Intake Date:</b> {new Date(resident.intake_date).toLocaleDateString('en-US')}</div>
             {/* <div className="resident__discharge"><br/>Discharge Date: {new Date(resident.discharge_date).toLocaleDateString('en-US')}</div> */}
-            <div className="resident__notes"><b>Notes:</b><br/> {resident.notes}</div>
+            <div className="resident__notes"><br/><b>Notes:</b><br/> {resident.notes}</div>
             <br/>
         {editButton()}
-        {/* <Button onClick={dischargeButton()}>Discharge</Button> */}
+        <Button >Discharge</Button>
         </section>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { Link } from "react-router-dom"
-import { Table } from 'semantic-ui-react'
+import { Table,Button } from 'semantic-ui-react'
 import "./Resident.css"
 
  
@@ -17,7 +17,8 @@ export const ResidentCard = ( {residents} ) => {
 
 
         <Table.Row>
-            <Table.Cell><Link to={`/residents/${residents.id}`}>{residents.firstName} {residents.lastName}</Link></Table.Cell>
+            <Table.Cell><Link to={`/residents/${residents.id}`}>{residents.lastName}, {residents.firstName} </Link></Table.Cell>
+            <Table.Cell><Button size='mini'>Discharge</Button></Table.Cell>
             <Table.Cell>{residents.houseId}</Table.Cell>
             <Table.Cell>{residents.roomId}</Table.Cell>
             <Table.Cell>{daysSinceIntake}</Table.Cell>

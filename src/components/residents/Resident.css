@@ -6,13 +6,15 @@
   }
 
 .resident_detail {
-    margin-left: 200px; /* Same as the width of the sidebar */
+    margin-left: 210px; /* Same as the width of the sidebar */
     padding: 10px 10px;
     margin-top: 10px;
+    font-size: 16px
   }
 
 .editFormContainer  {
     margin-left: 200px; /* Same as the width of the sidebar */
     padding: 10px 10px;
     margin-top: 10px;
+    width: 600px
   }

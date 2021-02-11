@@ -104,7 +104,8 @@ export const ResidentForm = (props) => {
         <Form className="taskForm">
             <div className="edit-form-align">
             <h2 className="taskForm__title">Edit Profile</h2>
-            <Form.Group><Form.Field >
+            <Form.Group widths='equal'>
+                <Form.Field >
                 <div className="form-group">
                     <label htmlFor="firstn">First Name: </label>
                     <input type="text" name="firstName" width={5} id="firstName" value={residents.firstName} required autoFocus className="form-control" placeholder="First name" 
@@ -119,11 +120,14 @@ export const ResidentForm = (props) => {
                     onChange={handleControlledInputChange}
                     ></input>
                 </div>
-            </Form.Field></Form.Group>
+            </Form.Field>
+            </Form.Group>
+            
+            <Form.Group widths='equal'>
             <Form.Field >
                 <div className="form-group">
                     <label htmlFor="bday">Birth Date: </label>
-                    <input type="text"  name="birthdate" value={residents.birthdate} className="form-control"
+                    <input type="text"  width={5} name="birthdate" value={residents.birthdate} className="form-control"
                     onChange={handleControlledInputChange}
                     ></input>
                 </div>
@@ -132,24 +136,27 @@ export const ResidentForm = (props) => {
             <Form.Field >
                 <div className="form-group">
                     <label htmlFor="completeTask">Gender: </label>
-                    <input type="text"  name="gender" value={residents.gender} className="form-control"
+                    <input type="text"  width={6} name="gender" value={residents.gender} className="form-control"
                     onChange={handleControlledInputChange}
                     ></input>
                 </div>
             </Form.Field>
-            <Form.Field >
-                <div className="form-group">
-                    <label htmlFor="completeTask">Notes: </label>
-                    <input type="text"  name="notes" value={residents.notes} className="form-control"
-                    onChange={handleControlledInputChange}
-                    ></input>
-                </div>
-            </Form.Field>
+            </Form.Group >
 
             <Form.Field >
                 <div className="form-group">
+                    <label htmlFor="completeTask">Notes: </label>
+                    <input type="text"  width={6} name="notes" value={residents.notes} className="form-control"
+                    onChange={handleControlledInputChange}
+                    ></input>
+                </div>
+            </Form.Field>
+            
+            <Form.Group widths='equal'>
+            <Form.Field >
+                <div className="form-group">
                     <label htmlFor="completeTask">House: </label>
-                    <input type="number"  name="houseId" value={residents.houseId} className="form-control"
+                    <input type="number"  width={5} name="houseId" value={residents.houseId} className="form-control"
                     onChange={handleControlledInputChange}
                     ></input>
                 </div>
@@ -158,11 +165,12 @@ export const ResidentForm = (props) => {
             <Form.Field >
                 <div className="form-group">
                     <label htmlFor="completeTask">Room: </label>
-                    <input type="number"  name="roomId" value={residents.roomId}  className="form-control"
+                    <input type="number"  width={5} name="roomId" value={residents.roomId}  className="form-control"
                     onChange={handleControlledInputChange}
                     ></input>
                 </div>
             </Form.Field>
+            </Form.Group>
             <Button color="purple"type="saveResident"
                 disabled={isLoading}
                 onClick = {evt => {
