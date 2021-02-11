@@ -7,10 +7,11 @@ import "./Resident.css"
 
 export const ResidentDetail = () => {
     const { getResidentById, housesWithAllResidents } = useContext(ResidentContext)
-    // const { editResident } = useContext(ResidentContext)
+    const { editResident } = useContext(ResidentContext)
 
     // const [ house, setHouses] = useState()
 	const [resident, setResidents] = useState({})
+    const [newHouseArray, setNewHouseArray] = useState({})
 	
 	const {residentId} = useParams();
 	const history = useHistory();
@@ -18,17 +19,15 @@ export const ResidentDetail = () => {
     useEffect(() => {
         getResidentById(residentId)
         .then((response) => {
-			setResidents(response)
-            
+			setResidents(response)  
 		})
-
 			}, [residentId])
             
     useEffect(() => {
-        
             housesWithAllResidents()
-            .then(houseResponse => { parseHouseResidents(houseResponse)} 
-        )
+            .then((houseResponse) => { 
+                parseHouseResidents(houseResponse)} 
+            )
     })
 
     // const dischargeButton = (() => {
@@ -64,27 +63,27 @@ export const ResidentDetail = () => {
         )
     })
 
-    const housePlacementButton = (() => {
+    // const housePlacementButton = (() => {
 
-        if (resident.houseId === 1234 && resident.roomId === 1234) {
-            return (
-                <>
-                    <Button onClick={() => {
-                        history.push(`/residents/${resident.id}`)
-                    }}>Choose house/room 
-                    </Button>
-                </>
-            )}
-            else {
-                return (
-                    <>
-              <div className="resident__house"><b>House:</b><br/> {resident.houseId}</div>
-              <div className="resident__room"><b>Room:</b><br/>{resident.roomId}</div> 
-              </>
-                )
+    //     if (resident.houseId === 1234 && resident.roomId === 1234) {
+    //         return (
+    //             <>
+    //                 <Button onClick={() => {
+    //                     history.push(`/residents/${resident.id}`)
+    //                 }}>Choose house/room 
+    //                 </Button>
+    //             </>
+    //         )}
+    //         else {
+    //             return (
+    //                 <>
+    //           <div className="resident__house"><b>House:</b><br/> {resident.houseId}</div>
+    //           <div className="resident__room"><b>Room:</b><br/>{resident.roomId}</div> 
+    //           </>
+    //             )
                 
-            }
-    })
+    //         }
+    // })
 
 
     return (
@@ -93,14 +92,15 @@ export const ResidentDetail = () => {
             <h3 className="resident__name">{resident.firstName} {resident.lastName}</h3>
             <div className="resident__bday"><br/>Birthdate: {resident.birthdate}</div>
             <div className="resident__gender"><br/>{resident.gender}</div>
-            {housePlacementButton()}
+            <div className="resident__house"><b>House:</b><br/> {resident.houseId}</div>
+            <div className="resident__room"><b>Room:</b><br/>{resident.roomId}</div> 
             <div className="resident__applied"><br/>Applied Date: {new Date(resident.applied_date).toLocaleDateString('en-US')}</div>
             <div className="resident__intake"><br/>Intake Date: {new Date(resident.intake_date).toLocaleDateString('en-US')}</div>
             {/* <div className="resident__discharge"><br/>Discharge Date: {new Date(resident.discharge_date).toLocaleDateString('en-US')}</div> */}
             <div className="resident__notes"><b>Notes:</b><br/> {resident.notes}</div>
             <br/>
         {editButton()}
-        {/* {dischargeButton()} */}
+        {/* <Button onClick={dischargeButton()}>Discharge</Button> */}
         </section>
     )
 }

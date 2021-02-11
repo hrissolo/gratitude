@@ -14,10 +14,10 @@ const availBeds =
     
     return (
 
-        <Item>
+        <Item className="flexonthehouses">
             <Link to={`/houses/${house.id}`}>
-                <img size='tiny' src={house.photo}/>
-                    <Item.Content verticalAlign='middle'>
+                <img className="houseIcon" size='tiny' src={house.photo} />
+                    <Item.Content className="houseTxt" verticalAlign='middle'>
                         <h3 className="houses_Card">{ house.name } </h3> 
                         {availBeds} <br/>
                         {house.gender} Property
