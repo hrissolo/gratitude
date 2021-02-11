@@ -45,10 +45,16 @@ export const ResidentProvider = (props) => {
             .then(res => res.json())
             .then(setHouses)
     }
+
+    const housesWithAllResidents = () => {
+        return fetch (`http://localhost:8088/houses?_embed=residents`)
+            .then(res=> res.json())
+            .then()
+    }
     
     return (
         <ResidentContext.Provider value={{
-            residents, getResidents, getResidentById, editResident, addResident, houses, getRezPerHouse
+            residents, getResidents, getResidentById, editResident, addResident, houses, getRezPerHouse, housesWithAllResidents
         }}>
             {props.children}
         </ResidentContext.Provider>

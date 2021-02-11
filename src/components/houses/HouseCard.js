@@ -16,7 +16,7 @@ const availBeds =
 
         <Item>
             <Link to={`/houses/${house.id}`}>
-                <Item.Image size='tiny' src={house.photo}/>
+                <img size='tiny' src={house.photo}/>
                     <Item.Content verticalAlign='middle'>
                         <h3 className="houses_Card">{ house.name } </h3> 
                         {availBeds} <br/>

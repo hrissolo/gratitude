@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from "react"
 import { ResidentContext } from "./ResidentProvider"
+import { HouseContext} from "../houses/HouseProvider"
 import { useParams, useHistory, Link } from "react-router-dom"
 import {Button} from "semantic-ui-react"
 import "./Resident.css"
 
 export const ResidentDetail = () => {
-    const { getResidentById } = useContext(ResidentContext)
-	
+    const { getResidentById, housesWithAllResidents } = useContext(ResidentContext)
+    // const { editResident } = useContext(ResidentContext)
+
+    // const [ house, setHouses] = useState()
 	const [resident, setResidents] = useState({})
 	
 	const {residentId} = useParams();
@@ -16,9 +19,39 @@ export const ResidentDetail = () => {
         getResidentById(residentId)
         .then((response) => {
 			setResidents(response)
+            
 		})
+
 			}, [residentId])
             
+    useEffect(() => {
+        
+            housesWithAllResidents()
+            .then(houseResponse => { parseHouseResidents(houseResponse)} 
+        )
+    })
+
+    // const dischargeButton = (() => {
+    //     let updatedResident = {...resident}
+    //     updatedResident["discharge_date"] = Date.now()
+    //     editResident(updatedResident)
+    // })
+
+
+    const parseHouseResidents = (houseResponse) => {
+        const newHouseArray = houseResponse.map(singlehouse => {
+            const currentResidents = singlehouse.residents.filter(onePerson => {
+                return onePerson.discharge_date === 1234
+            } )
+            singlehouse["currentResidents"] = currentResidents 
+            return singlehouse 
+        })
+            console.log(newHouseArray)
+
+        console.log(newHouseArray[0].totalBeds, newHouseArray[0].currentResidents.length)
+    }    
+    
+
 
     const editButton = (() => {
         return (
@@ -54,22 +87,6 @@ export const ResidentDetail = () => {
     })
 
 
-            // const showHouseNRoom = (() => 
-            // {
-            //   if (resident.houseId === 1235 && resident.roomId === 1235) {
-            //   return ( 
-            //     housePlacementButton() ) } 
-          
-            //   else {
-            //       return 
-            //       <>
-            //     <div className="resident__house"><b>House:</b><br/> {resident.houseId}</div>
-            //     <div className="resident__room"><b>Room:</b><br/>{resident.roomId}</div> 
-            //     </>
-            //   }
-            // })
-
-
     return (
         <section className="resident_detail">
             
@@ -83,7 +100,7 @@ export const ResidentDetail = () => {
             <div className="resident__notes"><b>Notes:</b><br/> {resident.notes}</div>
             <br/>
         {editButton()}
-        
+        {/* {dischargeButton()} */}
         </section>
     )
 }
